@@ -5,35 +5,36 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function MerchantNavyCatalogue() {
   const ships = [
     {
-      name: "MV Horizon Star",
-      scale: "1:250 Scale",
+      name: "Bulk Carrier Model",
+      scale: "2 Foot Model",
       image:
         "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1200&auto=format&fit=crop",
-      desc: "Handcrafted merchant navy model with premium wooden detailing and matte finish.",
+      desc: "Premium handcrafted wooden bulk carrier ship model with detailed finishing.",
     },
     {
-      name: "Ocean Voyager",
-      scale: "1:300 Scale",
+      name: "Container Ship Model",
+      scale: "2.5 Foot Model",
       image:
         "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop",
-      desc: "Minimal collector edition ship model inspired by modern cargo vessels.",
+      desc: "Custom wooden container vessel model designed for collectors and displays.",
     },
     {
-      name: "Atlantic Carrier",
-      scale: "1:200 Scale",
+      name: "Tanker Ship Model",
+      scale: "3 Foot Model",
       image:
         "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
-      desc: "Precision-crafted model designed for maritime collectors and enthusiasts.",
+      desc: "Luxury handcrafted tanker ship model inspired by real maritime vessels.",
     },
   ];
 
   return (
     <div className="bg-white text-neutral-900 min-h-screen overflow-x-hidden font-sans">
       
-      {/* Navbar */}
+      {/* ================= NAVBAR ================= */}
+
       <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-neutral-200 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          
+
           <h1 className="text-xl md:text-2xl font-semibold tracking-wide">
             Merchant Navy Models
           </h1>
@@ -41,6 +42,10 @@ function MerchantNavyCatalogue() {
           <nav className="hidden md:flex items-center gap-8 text-sm tracking-wide">
             <a href="#collection" className="hover:text-neutral-500 transition">
               Collection
+            </a>
+
+            <a href="#signature" className="hover:text-neutral-500 transition">
+              Signature
             </a>
 
             <a href="#about" className="hover:text-neutral-500 transition">
@@ -62,28 +67,30 @@ function MerchantNavyCatalogue() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="pt-36 pb-20 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      {/* ================= HERO ================= */}
+
+      <section className="pt-36 pb-24 px-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
 
           <div className="space-y-8">
 
             <p className="uppercase tracking-[0.3em] text-sm text-neutral-500">
-              Handcrafted Collection
+              Handcrafted Wooden Collection
             </p>
 
             <h2 className="text-5xl md:text-7xl leading-tight font-semibold tracking-tight">
-              Handcrafted Merchant Navy Ship Models
+              Premium Merchant Navy Ship Models
             </h2>
 
             <p className="text-neutral-600 text-lg leading-relaxed max-w-xl">
-              Premium miniature ship models inspired by maritime engineering,
-              crafted for collectors, offices, and nautical enthusiasts.
+              We create handcrafted wooden ship models inspired by real merchant
+              navy vessels including bulk carriers, tanker ships, and container
+              vessels. Custom sizes available in 2ft, 2.5ft, and 3ft models with
+              safe delivery all over India.
             </p>
 
             <div className="flex flex-wrap gap-4">
 
-              {/* CLICKABLE BUTTON */}
               <Link
                 to="/collection"
                 className="bg-neutral-900 text-white px-7 py-3 rounded-full hover:scale-105 transition-all duration-300 shadow-sm inline-block"
@@ -91,21 +98,24 @@ function MerchantNavyCatalogue() {
                 View Collection
               </Link>
 
-              <button className="border border-neutral-300 px-7 py-3 rounded-full hover:border-neutral-900 transition-all duration-300 flex items-center gap-2">
-                Learn More
+              <a
+                href="#signature"
+                className="border border-neutral-300 px-7 py-3 rounded-full hover:border-neutral-900 transition-all duration-300 flex items-center gap-2"
+              >
+                Signature Edition
                 <span>→</span>
-              </button>
+              </a>
 
             </div>
           </div>
 
           <div className="relative group">
-            <div className="overflow-hidden rounded-[2rem] shadow-xl">
+            <div className="overflow-hidden rounded-[2.5rem] shadow-2xl">
 
               <img
                 src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1400&auto=format&fit=crop"
                 alt="Ship Model"
-                className="w-full h-[420px] object-cover group-hover:scale-105 transition-all duration-700"
+                className="w-full h-[520px] object-cover group-hover:scale-105 transition-all duration-700"
               />
 
             </div>
@@ -114,11 +124,13 @@ function MerchantNavyCatalogue() {
         </div>
       </section>
 
-      {/* Collection */}
+      {/* ================= COLLECTION ================= */}
+
       <section id="collection" className="py-24 px-6 bg-neutral-50">
+
         <div className="max-w-7xl mx-auto">
 
-          <div className="flex items-end justify-between mb-14 gap-6 flex-wrap">
+          <div className="flex items-end justify-between mb-14 flex-wrap gap-6">
 
             <div>
               <p className="uppercase tracking-[0.3em] text-sm text-neutral-500 mb-3">
@@ -126,14 +138,16 @@ function MerchantNavyCatalogue() {
               </p>
 
               <h3 className="text-4xl md:text-5xl font-semibold tracking-tight">
-                Featured Models
+                Featured Ship Models
               </h3>
             </div>
 
-            <button className="flex items-center gap-2 border border-neutral-300 px-5 py-3 rounded-full hover:bg-white transition-all duration-300">
+            <Link
+              to="/collection"
+              className="border border-neutral-300 px-5 py-3 rounded-full hover:bg-white transition-all duration-300"
+            >
               Browse All
-              <span>↗</span>
-            </button>
+            </Link>
 
           </div>
 
@@ -150,22 +164,22 @@ function MerchantNavyCatalogue() {
                   <img
                     src={ship.image}
                     alt={ship.name}
-                    className="w-full h-[240px] object-cover group-hover:scale-105 transition-all duration-700"
+                    className="w-full h-[260px] object-cover group-hover:scale-110 transition-all duration-700"
                   />
 
                 </div>
 
                 <div className="p-7 space-y-5">
 
-                  <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center justify-between">
 
                     <h4 className="text-2xl font-semibold">
                       {ship.name}
                     </h4>
 
-                    <button className="w-11 h-11 rounded-full border border-neutral-300 flex items-center justify-center hover:bg-neutral-900 hover:text-white transition-all duration-300">
+                    <div className="w-11 h-11 rounded-full border border-neutral-300 flex items-center justify-center">
                       →
-                    </button>
+                    </div>
 
                   </div>
 
@@ -178,23 +192,138 @@ function MerchantNavyCatalogue() {
                   </p>
 
                 </div>
+
               </div>
             ))}
 
           </div>
+
         </div>
+
       </section>
-{/* About */}
+
+      {/* ================= SIGNATURE COLLECTION ================= */}
+
+      <section
+        id="signature"
+        className="py-32 px-6 bg-black text-white overflow-hidden"
+      >
+
+        <div className="max-w-7xl mx-auto">
+
+          {/* Heading */}
+
+          <div className="max-w-3xl mb-20">
+
+            <p className="uppercase tracking-[0.3em] text-sm text-neutral-400 mb-4">
+              Signature Collection
+            </p>
+
+            <h3 className="text-5xl md:text-7xl font-semibold leading-tight mb-8">
+              Ships Inside Glass Bottles
+            </h3>
+
+            <p className="text-neutral-300 text-lg leading-relaxed">
+              Our most exclusive handcrafted creations — premium miniature wooden
+              ship models carefully designed inside transparent glass bottles.
+              Perfect for collectors, gifting, office decor, and luxury nautical
+              displays.
+            </p>
+
+          </div>
+
+          {/* Main Layout */}
+
+          <div className="grid lg:grid-cols-2 gap-8 mb-10">
+
+            {/* Left Big Image */}
+
+            <div className="relative group overflow-hidden rounded-[2.5rem]">
+
+              <div className="absolute top-6 left-6 z-20 bg-white text-black px-5 py-2 rounded-full text-sm font-medium shadow-lg">
+                Limited Edition
+              </div>
+
+              <img
+                src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1200&auto=format&fit=crop"
+                alt="Glass Bottle Ship"
+                className="w-full h-[650px] object-cover rounded-[2.5rem] group-hover:scale-105 transition-all duration-700"
+              />
+
+            </div>
+
+            {/* Right Images */}
+
+            <div className="grid gap-8">
+
+              <div className="group overflow-hidden rounded-[2rem]">
+                <img
+                  src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
+                  alt="Bottle Ship"
+                  className="w-full h-[310px] object-cover rounded-[2rem] group-hover:scale-110 transition-all duration-700"
+                />
+              </div>
+
+              <div className="group overflow-hidden rounded-[2rem]">
+                <img
+                  src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1200&auto=format&fit=crop"
+                  alt="Bottle Ship"
+                  className="w-full h-[310px] object-cover rounded-[2rem] group-hover:scale-110 transition-all duration-700"
+                />
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Horizontal Gallery */}
+
+          <div className="flex gap-6 overflow-x-auto pb-4">
+
+            {[
+              "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1200&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1200&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1200&auto=format&fit=crop",
+            ].map((img, index) => (
+              <div
+                key={index}
+                className="min-w-[320px] overflow-hidden rounded-[2rem] group"
+              >
+
+                <img
+                  src={img}
+                  alt="Bottle Ship"
+                  className="w-[320px] h-[220px] object-cover rounded-[2rem] group-hover:scale-110 transition-all duration-700"
+                />
+
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ================= ABOUT ================= */}
+
       <section id="about" className="py-28 px-6">
+
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
           <div className="overflow-hidden rounded-[2rem] shadow-lg">
+
             <img
               src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1200&auto=format&fit=crop"
               alt="Craftsmanship"
-             className="w-full h-[340px] object-cover hover:scale-105 transition-all duration-700"            />
+              className="w-full h-[400px] object-cover hover:scale-105 transition-all duration-700"
+            />
+
           </div>
 
           <div className="space-y-8">
+
             <p className="uppercase tracking-[0.3em] text-sm text-neutral-500">
               Craftsmanship
             </p>
@@ -204,56 +333,68 @@ function MerchantNavyCatalogue() {
             </h3>
 
             <p className="text-neutral-600 leading-relaxed text-lg">
-              Every miniature ship model is handcrafted with attention to
-              detail, inspired by real merchant navy vessels and modern
-              engineering aesthetics.
+              Every ship model is handcrafted from wood with precision and
+              attention to detail. We create bulk carrier, tanker, and container
+              ship models in custom sizes including 2ft, 2.5ft, and 3ft models.
+              Safe courier delivery available all over India.
             </p>
 
             <div className="grid grid-cols-2 gap-6 pt-4">
+
               <div>
                 <h4 className="text-4xl font-semibold">50+</h4>
-                <p className="text-neutral-500 mt-2">Unique Ship Models</p>
+                <p className="text-neutral-500 mt-2">
+                  Unique Ship Models
+                </p>
               </div>
 
               <div>
                 <h4 className="text-4xl font-semibold">100%</h4>
-                <p className="text-neutral-500 mt-2">Handcrafted Finish</p>
+                <p className="text-neutral-500 mt-2">
+                  Handcrafted Finish
+                </p>
               </div>
+
             </div>
+
+            {/* Sizes */}
+
+            <div className="mt-10 p-6 rounded-[2rem] bg-neutral-100">
+
+              <h4 className="text-2xl font-semibold mb-4">
+                Custom Sizes Available
+              </h4>
+
+              <div className="flex flex-wrap gap-4">
+
+                <span className="px-5 py-2 rounded-full bg-white border border-neutral-300">
+                  2 Foot
+                </span>
+
+                <span className="px-5 py-2 rounded-full bg-white border border-neutral-300">
+                  2.5 Foot
+                </span>
+
+                <span className="px-5 py-2 rounded-full bg-white border border-neutral-300">
+                  3 Foot
+                </span>
+
+              </div>
+
+            </div>
+
           </div>
+
         </div>
+
       </section>
 
-      {/* Gallery */}
-      <section className="py-24 px-6 bg-neutral-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-14">
-            <p className="uppercase tracking-[0.3em] text-sm text-neutral-500 mb-3">
-              Gallery
-            </p>
-            <h3 className="text-4xl md:text-5xl font-semibold tracking-tight">
-              Visual Showcase
-            </h3>
-          </div>
+      {/* ================= CONTACT ================= */}
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <img
-              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
-              alt="Gallery"
-              className="rounded-[2rem] h-[280px] w-full object-cover hover:scale-[1.02] transition-all duration-500"
-            />
+      <section id="contact" className="py-28 px-6 bg-neutral-50">
 
-            <img
-              src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1200&auto=format&fit=crop"
-              alt="Gallery"
-              className="rounded-[2rem] h-[280px] w-full object-cover hover:scale-[1.02] transition-all duration-500"            />
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="py-28 px-6">
         <div className="max-w-4xl mx-auto text-center space-y-8">
+
           <p className="uppercase tracking-[0.3em] text-sm text-neutral-500">
             Contact
           </p>
@@ -263,74 +404,92 @@ function MerchantNavyCatalogue() {
           </h3>
 
           <p className="text-neutral-600 text-lg max-w-2xl mx-auto leading-relaxed">
-            Get in touch for collector editions, custom merchant navy models,
-            and premium handcrafted maritime displays.
+            Contact us for custom wooden ship models, glass bottle ship models,
+            and premium handcrafted maritime displays with safe delivery across India.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">
+
             <a
-  href="https://wa.me/918141769602"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-neutral-900 text-white px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 inline-block"
->
-  WhatsApp Us
-</a>
+              href="https://wa.me/918141769602"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-neutral-900 text-white px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 inline-block"
+            >
+              WhatsApp Us
+            </a>
 
             <button className="border border-neutral-300 px-8 py-4 rounded-full hover:border-neutral-900 transition-all duration-300">
               View Instagram
             </button>
+
           </div>
+
         </div>
+
       </section>
 
-      {/* Footer */}
+      {/* ================= FOOTER ================= */}
+
       <footer className="border-t border-neutral-200 py-8 px-6">
+
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
-          <p>© 2026 Merchant Navy Models. All rights reserved.</p>
+
+          <div>
+            <p>© 2026 Merchant Navy Models. All rights reserved.</p>
+            <p className="mt-1">
+              Safe delivery available all over India.
+            </p>
+          </div>
 
           <div className="flex items-center gap-6">
+
             <a href="#" className="hover:text-neutral-900 transition">
               Instagram
             </a>
+
             <a href="#" className="hover:text-neutral-900 transition">
               WhatsApp
             </a>
+
             <a href="#" className="hover:text-neutral-900 transition">
               Email
             </a>
+
           </div>
+
         </div>
+
       </footer>
+
     </div>
   );
 }
-
 
 /* ================= COLLECTION PAGE ================= */
 
 function CollectionPage() {
   const ships = [
     {
-      name: "MV Horizon Star",
-      scale: "1:250 Scale",
+      name: "Bulk Carrier Model",
+      scale: "2 Foot Model",
       image:
         "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1200&auto=format&fit=crop",
-      desc: "Handcrafted merchant navy model with premium wooden detailing and matte finish.",
+      desc: "Premium handcrafted wooden bulk carrier ship model.",
     },
     {
-      name: "Ocean Voyager",
-      scale: "1:300 Scale",
+      name: "Container Ship Model",
+      scale: "2.5 Foot Model",
       image:
         "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop",
-      desc: "Minimal collector edition ship model inspired by modern cargo vessels.",
+      desc: "Custom container vessel crafted from wood.",
     },
     {
-      name: "Atlantic Carrier",
-      scale: "1:200 Scale",
+      name: "Tanker Ship Model",
+      scale: "3 Foot Model",
       image:
         "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
-      desc: "Precision-crafted model designed for maritime collectors and enthusiasts.",
+      desc: "Luxury tanker ship display model.",
     },
   ];
 
@@ -359,7 +518,7 @@ function CollectionPage() {
           {ships.map((ship, index) => (
             <div
               key={index}
-              className="bg-neutral-100 rounded-[2rem] overflow-hidden shadow-sm"
+              className="bg-neutral-100 rounded-[2rem] overflow-hidden shadow-sm hover:-translate-y-2 transition-all duration-500"
             >
 
               <img
